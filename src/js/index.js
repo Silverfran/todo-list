@@ -22,24 +22,25 @@ class TodoApp extends React.Component {
 
 	render() {
 		return (
-			<div className="container-fluid justify-content-center bg-light">
-				<div className="row justify-content-center">
-					<div className="col-4">
-						<div className="row justify-content-center">
-							<div className="col-auto">
-								<h3>todos</h3>
+			<div className="container-fluid">
+				<div className="row">
+					<div className="col">
+						<div className="row">
+							<div className="col">
+								<h1>todos</h1>
 							</div>
 						</div>
-						<div className="row justify-content-center border">
-							<div className="col-auto">
+						<div className="row">
+							<div className="col-12">
 								<form onSubmit={this.handleSubmit}>
 									<label htmlFor="new-todo" />
 									<input
+										className="new-todo"
+										placeholder="What needs to be done?"
 										id="new-todo"
 										onChange={this.handleChange}
 										value={this.state.text}
 									/>
-									<button> + </button>
 								</form>
 							</div>
 						</div>
@@ -47,7 +48,9 @@ class TodoApp extends React.Component {
 							items={this.state.items}
 							callbackDelete={this.handleDelete}
 						/>
-						<p>{this.state.items.length} items left</p>
+						<div className="my-3">
+							{this.state.items.length} items left
+						</div>
 					</div>
 				</div>
 			</div>
@@ -85,11 +88,9 @@ class TodoApp extends React.Component {
 class TodoList extends React.Component {
 	render() {
 		return this.props.items.map(item => (
-			<div
-				key={item.id}
-				className="row justify-content-between parent border">
-				<div className="col-auto"> {item.text} </div>
-				<div className="col-2 child">
+			<div key={item.id} className="row parent h-10 p-2 main">
+				<div className="col-11"> {item.text} </div>
+				<div className="col-1 child">
 					<i
 						className="fa fa-times"
 						onClick={() => {
