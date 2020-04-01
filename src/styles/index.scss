@@ -5,15 +5,18 @@
     other sylesheets into your bunde as well, e.j:
     import 'relative/path/to/stylesheet.scss';         */
 
-.blurGreen {
-    box-shadow: 0px 0px 50px 0px rgb(54, 250, 36) !important;
-    background-color: rgb(54, 250, 36) !important;
+.parent > .child {
+        visibility: hidden;
+      }
+.parent:hover > .child {
+        visibility: visible;
 }
-.blurYellow {
-    box-shadow: 0px 0px 50px 0px rgb(229, 255, 0) !important;
-    background-color: rgb(229, 255, 0) !important;
-}
-.blurRed {
-    box-shadow: 0px 0px 50px 0px rgb(255, 0, 0) !important;
-    background-color: rgb(255, 0, 0) !important;
+input {
+    color: -internal-light-dark-color(black, grey);
+    background-color: -internal-light-dark-color(grey, black);
+    font: 400 18px Arial;
+    border-width: 0px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
 }
